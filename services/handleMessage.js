@@ -21,7 +21,14 @@ export const handleMessage = async message => {
     }
 
     const browser = await getBrowser()
-    await browser.getScreenshot(options)
+    const imageBuffer = await browser.getScreenshot(options)
 
+  await message.reply({
+    files: [{
+      attachment: imageBuffer,
+      file: imageBuffer,
+      name: `${message.content}.jpg`
+    }]
+  })
 
 }

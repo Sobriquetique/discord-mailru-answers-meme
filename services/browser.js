@@ -13,8 +13,13 @@ class Browser {
     await page.goto(
       path.resolve(process.cwd(), 'static', `template.html${getQueryString(options)}`)
     )
-    await page.screenshot({ path: `test.png` })
+    const imageBuffer = await page.screenshot({
+      type: 'jpeg',
+      quality: 100,
+
+    })
     await page.close()
+    return imageBuffer
   }
 
 }
