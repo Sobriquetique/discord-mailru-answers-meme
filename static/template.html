@@ -38,10 +38,11 @@
     }
   </style>
 
-  <!-- ШАПКА -->
+  <!-- HEADER -->
   <style>
     .header {
       display: flex;
+      margin-bottom: 16px;
     }
 
     .bar {
@@ -85,6 +86,29 @@
       background-image: url("./img/icon-lightbulb.gif");
     }
   </style>
+
+  <!-- BREADCRUMBS -->
+  <style>
+    .breadcrumbs {
+      font-family: Tahoma, sans-serif;
+      font-size: 70%;
+      color: #666666;
+      display: flex;
+
+      margin-bottom: 20px;
+    }
+
+    .breadcrumbs > span:nth-child(odd) {
+      text-decoration: underline;
+      margin: 0 2px;
+    }
+
+    .breadcrumbs > span:nth-child(even), .breadcrumbs > span:last-child {
+      text-decoration: none;
+    }
+
+    .
+  </style>
 </head>
 
 <body>
@@ -101,6 +125,13 @@
     </div>
 
     <div class="breadcrumbs">
+      <span>Главная</span>
+      <span>»</span>
+      <span>Спорт</span>
+      <span>»</span>
+      <span>Другие виды спорта</span>
+      <span>»</span>
+      <span>Решенный вопрос</span>
 
     </div>
 
