@@ -7,6 +7,7 @@
 
   <title>Meme template html</title>
 
+  <!-- MAIN -->
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -17,6 +18,7 @@
     html {
       height: 100vh;
       min-height: 100vh;
+      font-family: Arial, sans-serif;
     }
 
     body {
@@ -28,27 +30,94 @@
       justify-content: center;
     }
 
-    .test {
-      width: 400px;
-      height: 400px;
-      border-radius: 16px;
-      white-space: pre-wrap;
+    .container {
+      width: 724px;
+      min-height: 441px;
+
+      padding: 2px 8px 8px 12px;
+    }
+  </style>
+
+  <!-- ШАПКА -->
+  <style>
+    .header {
+      display: flex;
+    }
+
+    .bar {
+      height: 52px;
+      padding: 0 16px;
+      background-position: left top;
+      background-size: auto 100%;
+      background-repeat: repeat-x;
+      text-decoration: underline;
+      font-size: 130%;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+
+    }
+    .bar.left {
+      flex: 1 1 100%;
+      background-image: url("./img/background-gradient-green.gif");
+      color: #390;
+      margin-right: 20px;
+    }
+    .bar.right {
+      flex: 0 0 240px;
+      background-image: url("./img/background-gradient-orange.gif");
+      color: #f26d00;
+    }
+    .bar-icon {
+      background-repeat: no-repeat;
+      background-size: auto;
+      background-position: center;
+      margin-right: 8px;
+    }
+    .bar-icon.left {
+      width: 39px;
+      height: 28px;
+      background-image: url("./img/icon-question-marks.gif");
+    }
+    .bar-icon.right {
+      width: 32px;
+      height: 30px;
+      background-image: url("./img/icon-lightbulb.gif");
     }
   </style>
 </head>
 
 <body>
-<div class="test"></div>
+  <div class="container">
+    <div class="header">
+      <div class="bar left">
+        <div class="bar-icon left"></div>
+        Спрашивайте!
+      </div>
+      <div class="bar right">
+        <div class="bar-icon right"></div>
+        Узнавайте!
+      </div>
+    </div>
 
-<script>
-  const
-    params = new URLSearchParams(decodeURI(window.location.search))
+    <div class="breadcrumbs">
+
+    </div>
+
+    <div class="comment">
+
+    </div>
+  </div>
+
+  <script>
+    const
+      params = new URLSearchParams(decodeURI(window.location.search))
 
 
-  const div = document.querySelector('.test')
-  div.innerText = Array.from(params.entries()).reduce((result, [key, value]) => {
-    return result + key + ': ' + value + '\n'
-  }, '')
-</script>
+    const div = document.querySelector('.test')
+    div.innerText = Array.from(params.entries()).reduce((result, [key, value]) => {
+      return result + key + ': ' + value + '\n'
+    }, '')
+  </script>
 </body>
 </html>
