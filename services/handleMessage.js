@@ -20,10 +20,16 @@ const subscribe = () => {
   }
 }
 
+const matches = ['не ебу', 'не знаю', 'хз', 'сложна']
+
 export const handleMessage = async message => {
   if (message.type !== 'REPLY'
     || message.reference === null
-    || !message.content?.toLocaleLowerCase().includes('не знаю. я не')
+    || !matches.reduce((result, toMatch) => {
+      if (message.content?.toLocaleLowerCase().includes(toMatch))
+        return true
+      return result
+    }, false)
   )
     return
 
@@ -49,12 +55,12 @@ export const handleMessage = async message => {
       files: [{
         attachment: imageBuffer,
         file: imageBuffer,
-        name: `${message.content}.jpg`
+        name: `stuff.jpg`
       }]
     })
   }
   catch (e) {
-    await message.reply('Упс, что-то пошло не так')
+    await message.reply(e.message)
   }
   finally {
     unsubscribe()

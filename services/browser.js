@@ -16,7 +16,7 @@ class Browser {
       { waitUntil: 'networkidle0' }
     )
 
-    console.log(options.avatar)
+    console.log(options)
 
     await page.evaluate(async options => {
       const
@@ -47,7 +47,7 @@ class Browser {
 
     const imageBuffer = await page.screenshot({
       type: 'jpeg',
-      quality: 100,
+      quality: 50,
 
     })
     await page.close()

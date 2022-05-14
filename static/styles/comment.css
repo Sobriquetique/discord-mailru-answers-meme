@@ -21,10 +21,8 @@
 .actualPhoto {
   width: 90px;
   height: 90px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url("https://cdn.discordapp.com/avatars/165581143041769472/428ac2433dc59c008d1f89b4b303fa1d.webp?size=128");
+  object-fit: cover;
+  object-position: center;
 }
 
 .stars {
@@ -87,7 +85,7 @@
   background-image: url("../img/icon-at-red.gif");
   margin-right: 5px;
 }
-.at.green {
+.at.at-green {
   background-image: url("../img/icon-at.gif");
 }
 
