@@ -1,0 +1,3 @@
+export const
+  SECOND_AS_MS = 1000,
+  MINUTE_AS_MS = SECOND_AS_MS * 60
