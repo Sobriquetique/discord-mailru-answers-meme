@@ -28,16 +28,16 @@
 }
 .bar-icon {
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: contain;
   background-position: center;
   margin-right: 8px;
 }
-.bar-icon.left {
+.bar-icon.bar-icon-left {
   width: 39px;
   height: 28px;
   background-image: url("../img/icon-question-marks.gif");
 }
-.bar-icon.right {
+.bar-icon.bar-icon-right {
   width: 32px;
   height: 30px;
   background-image: url("../img/icon-lightbulb.gif");

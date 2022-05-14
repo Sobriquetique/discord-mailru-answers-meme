@@ -1,11 +1,11 @@
 import { getBrowser } from './browser.js'
 
 const constructOptions = (message, postfix) => ({
-  ['avatar' + postfix]: `https://cdn.discordapp.com/${
+  ['avatar' + postfix]: `https://cdn.discordapp.com/avatars/${
     message.author.id
   }/${
     message.author.avatar
-  }.webp?size=128`,
+  }.jpg?size=128`,
   ['username' + postfix]: message.author.username,
   ['content' + postfix]: message.content,
 })
@@ -17,7 +17,6 @@ export const handleMessage = async message => {
   )
     return
 
-  console.log(message)
   const
     firstMessage = await message.channel.messages.fetch(message.reference.messageId),
     options = {
