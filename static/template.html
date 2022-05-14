@@ -7,118 +7,21 @@
 
   <title>Meme template html</title>
 
-  <!-- MAIN -->
-  <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-      padding: 0;
-      margin: 0;
-    }
+  <link rel="stylesheet" href="./styles/main.css">
+  <link rel="stylesheet" href="./styles/header.css">
+  <link rel="stylesheet" href="./styles/breadcrumbs.css">
+  <link rel="stylesheet" href="./styles/comment.css">
 
-    html {
-      height: 100vh;
-      min-height: 100vh;
-      font-family: Arial, sans-serif;
-    }
-
-    body {
-      min-height: 100%;
-      height: 100%;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .container {
-      width: 724px;
-      min-height: 441px;
-
-      padding: 2px 8px 8px 12px;
-    }
-  </style>
-
-  <!-- HEADER -->
-  <style>
-    .header {
-      display: flex;
-      margin-bottom: 16px;
-    }
-
-    .bar {
-      height: 52px;
-      padding: 0 16px;
-      background-position: left top;
-      background-size: auto 100%;
-      background-repeat: repeat-x;
-      text-decoration: underline;
-      font-size: 130%;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-
-    }
-    .bar.left {
-      flex: 1 1 100%;
-      background-image: url("./img/background-gradient-green.gif");
-      color: #390;
-      margin-right: 20px;
-    }
-    .bar.right {
-      flex: 0 0 240px;
-      background-image: url("./img/background-gradient-orange.gif");
-      color: #f26d00;
-    }
-    .bar-icon {
-      background-repeat: no-repeat;
-      background-size: auto;
-      background-position: center;
-      margin-right: 8px;
-    }
-    .bar-icon.left {
-      width: 39px;
-      height: 28px;
-      background-image: url("./img/icon-question-marks.gif");
-    }
-    .bar-icon.right {
-      width: 32px;
-      height: 30px;
-      background-image: url("./img/icon-lightbulb.gif");
-    }
-  </style>
-
-  <!-- BREADCRUMBS -->
-  <style>
-    .breadcrumbs {
-      font-family: Tahoma, sans-serif;
-      font-size: 70%;
-      color: #666666;
-      display: flex;
-
-      margin-bottom: 20px;
-    }
-
-    .breadcrumbs > span:nth-child(odd) {
-      text-decoration: underline;
-      margin: 0 2px;
-    }
-
-    .breadcrumbs > span:nth-child(even), .breadcrumbs > span:last-child {
-      text-decoration: none;
-    }
-
-    .
-  </style>
 </head>
 
 <body>
   <div class="container">
     <div class="header">
-      <div class="bar left">
+      <div class="bar bar-left">
         <div class="bar-icon left"></div>
         Спрашивайте!
       </div>
-      <div class="bar right">
+      <div class="bar bar-right">
         <div class="bar-icon right"></div>
         Узнавайте!
       </div>
@@ -136,19 +39,104 @@
     </div>
 
     <div class="comment">
-
+      <div class="left">
+        <div class="photo">
+          <div class="actualPhoto" id="INJECT_QUESTION_AVATAR"></div>
+        </div>
+        <div class="stars">
+          <div class="yellow"></div>
+          <div class="yellow"></div>
+          <div class="yellow"></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="icons">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="username">
+          <div class="at"></div>
+          <div class="name" id="INJECT_QUESTION_USERNAME">Джони</div>
+          <div class="triangle"></div>
+          <div class="role">Гуру</div>
+          <div class="count">(3093)</div>
+        </div>
+        <div class="closed">
+          Закрыт: 2 года назад
+        </div>
+        <div class="giftSticker">
+          <div class="gift"></div>
+          <div>Подарить стикер!</div>
+          <div class="new"></div>
+        </div>
+        <div id="INJECT_QUESTION_TEXT" class="question">Можно качаться на ночь?</div>
+        <div class="bottom">
+          <div class="rating">
+            <span>Оценка:</span>
+            <span>0</span>
+          </div>
+          <div class="rating">
+            <span class="blue">Рейтинг:</span>
+            <span>0</span>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <div class="bestAnswer">
+      Лучший ответ
+    </div>
+
+    <div class="comment comment-green">
+      <div class="left">
+        <div class="photo">
+          <div class="actualPhoto" id="INJECT_ANSWER_AVATAR"></div>
+        </div>
+        <div class="stars">
+          <div class="yellow"></div>
+          <div class="yellow"></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="icons">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="username">
+          <div class="at"></div>
+          <div class="name" id="INJECT_ANSWER_USERNAME">Джони</div>
+          <div class="triangle"></div>
+          <div class="role">Мастер</div>
+          <div class="count">(1691)</div>
+          <div class="date">
+            2 года назад <div>(<a>ссылка</a>)</div>
+          </div>
+        </div>
+        <div id="INJECT_ANSWER_TEXT" class="answer">Можно качаться на ночь?</div>
+        <div class="bottom">
+          <div class="rating">
+            <span>Оценка:</span>
+            <span>0</span>
+          </div>
+          <div class="rating">
+            <span>Рейтинг:</span>
+            <span>0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
-
-  <script>
-    const
-      params = new URLSearchParams(decodeURI(window.location.search))
-
-
-    const div = document.querySelector('.test')
-    div.innerText = Array.from(params.entries()).reduce((result, [key, value]) => {
-      return result + key + ': ' + value + '\n'
-    }, '')
-  </script>
 </body>
 </html>

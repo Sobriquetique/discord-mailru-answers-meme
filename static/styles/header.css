@@ -1,0 +1,44 @@
+.header {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.bar {
+  height: 52px;
+  padding: 0 16px;
+  background-position: left top;
+  background-size: auto 100%;
+  background-repeat: repeat-x;
+  text-decoration: underline;
+  font-size: 130%;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+.bar.bar-left {
+  flex: 1 1 100%;
+  background-image: url("../img/background-gradient-green.gif");
+  color: #390;
+  margin-right: 20px;
+}
+.bar.bar-right {
+  flex: 0 0 240px;
+  background-image: url("../img/background-gradient-orange.gif");
+  color: #f26d00;
+}
+.bar-icon {
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+  margin-right: 8px;
+}
+.bar-icon.left {
+  width: 39px;
+  height: 28px;
+  background-image: url("../img/icon-question-marks.gif");
+}
+.bar-icon.right {
+  width: 32px;
+  height: 30px;
+  background-image: url("../img/icon-lightbulb.gif");
+}
