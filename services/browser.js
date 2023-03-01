@@ -16,8 +16,6 @@ class Browser {
       { waitUntil: 'networkidle0' }
     )
 
-    console.log(options)
-
     await page.evaluate(async options => {
       const
         img1 = document.querySelector('#INJECT_QUESTION_AVATAR'),

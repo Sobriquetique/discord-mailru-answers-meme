@@ -1,5 +1,4 @@
 import { getBrowser } from './browser.js'
-import { SECOND_AS_MS } from '../config/var.js'
 
 const constructOptions = (message, postfix) => ({
   ['avatar' + postfix]: `https://cdn.discordapp.com/avatars/${
@@ -20,9 +19,10 @@ const subscribe = () => {
   }
 }
 
-const matches = ['не ебу', 'не знаю', 'хз', 'сложна']
+const matches = ['не знаю', 'хз', 'сложна']
 
 export const handleMessage = async message => {
+  console.log(message)
   if (message.type !== 'REPLY'
     || message.reference === null
     || !matches.reduce((result, toMatch) => {
@@ -50,6 +50,7 @@ export const handleMessage = async message => {
 
     const browser = await getBrowser()
     const imageBuffer = await browser.getScreenshot(options)
+
 
     await message.reply({
       files: [{
