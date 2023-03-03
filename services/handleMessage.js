@@ -1,4 +1,5 @@
 import { getBrowser } from './browser.js'
+import { channelRouter } from './ChannelRouter.js'
 
 const constructOptions = (message, postfix) => ({
   ['avatar' + postfix]: `https://cdn.discordapp.com/avatars/${
@@ -21,8 +22,12 @@ const subscribe = () => {
 
 const matches = ['не знаю', 'хз', 'сложна']
 
-export const handleMessage = async message => {
-  console.log(message)
+export const handleMessage = async (message, client) => {
+  const routerResponse = await channelRouter.getResponseOrNull(message)
+  if (routerResponse) {
+    await message.reply(routerResponse)
+  }
+
   if (message.type !== 'REPLY'
     || message.reference === null
     || !matches.reduce((result, toMatch) => {
@@ -52,13 +57,22 @@ export const handleMessage = async message => {
     const imageBuffer = await browser.getScreenshot(options)
 
 
-    await message.reply({
-      files: [{
-        attachment: imageBuffer,
-        file: imageBuffer,
-        name: `stuff.jpg`
-      }]
-    })
+    const
+      routedChannelId = channelRouter.getSpamChannelIdByGuildId(message.guildId),
+      body = {
+        files: [{
+          attachment: imageBuffer,
+          file: imageBuffer,
+          name: `stuff.jpg`
+        }]
+      }
+    if (!routedChannelId) {
+      await message.reply(body)
+      return
+    }
+
+    const channel = client.channels.cache.find(channel => channel.id === routedChannelId)
+    channel.send(body)
   }
   catch (e) {
     await message.reply(e.message)

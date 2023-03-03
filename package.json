@@ -5,6 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "start": "node index.js",
+    "channels": "node scripts/getGuildChannels.js"
   },
   "author": "",
   "license": "ISC",
