@@ -36,4 +36,4 @@ DISCORD_APP_TOKEN={подставить_ваш_токен}
 ```
 
 ### 4. Мемить
-![Пример][/assets/example.jpg]
+![Пример](/assets/example.jpg)
