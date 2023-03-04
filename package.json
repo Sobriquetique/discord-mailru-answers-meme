@@ -8,6 +8,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "build": "echo \"stuff\"",
     "start": "node index.js",
     "channels": "node scripts/getGuildChannels.js"
   },
