@@ -58,7 +58,7 @@ class ChannelRouter {
           return 'Жди следующего токена чел'
         }
         await this.setSpamChannelIdForGuildId({ guildId: message.guildId, channelId: message.channelId })
-        return 'Попал'
+        return 'Этот канал признан сральней'
       }
       return null
     }
