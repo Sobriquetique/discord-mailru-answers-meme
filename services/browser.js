@@ -1,5 +1,6 @@
 import * as path from 'node:path'
 import puppeteer from 'puppeteer'
+import { __projectRoot } from '../config/root.js'
 
 class Browser {
   async init() {
@@ -9,12 +10,12 @@ class Browser {
   }
 
   async getScreenshot(options) {
-    let path = 'file://' + path.resolve(process.cwd(), 'static', `template.html`)
+    let filePath = 'file://' + path.resolve(__projectRoot, 'static', `template.html`)
     try {
       const page = await this.browser.newPage()
       await page.setViewport({ width: 724, height: 441 })
       await page.goto(
-        path,
+        filePath,
         { waitUntil: 'networkidle0' }
       )
 
@@ -54,7 +55,7 @@ class Browser {
       return imageBuffer
     }
     catch (e) {
-      throw new Error(`${e.message}. Path: ${path}`)
+      throw new Error(`${e.message}. Path: ${filePath}`)
     }
 
   }
